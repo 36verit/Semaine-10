@@ -1,5 +1,5 @@
 $bouton = document.getElementById("bouton");
-$multiplicateur = document.querySelector("#multiplicateur");
+$multiplicateur = document.getElementById("multiplicateur");
 $boutonAutoclic = document.getElementById("boutonAutoclic");
 $score = document.getElementById("score");
 score = 0;
@@ -41,7 +41,7 @@ function acheterMultiplicateur() {
     }
 }
 
-function afficherScore(0) {
+function acheterAutoclick() {
     if (score >= prixAutoClick()) {
         score = score - prixAutoClick();
         autoclicker();
@@ -61,3 +61,4 @@ $boutonAutoclic.onclick = acheterAutoclick;
 afficherScore();
 afficherMultiplicateur();
 afficherPrixAutoclick();
+

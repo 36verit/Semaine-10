@@ -1,24 +1,41 @@
-
-h3{
-color: blue;
+#en_tete img{
+width:60%;   
+height:30%;
+display:block;
+margin:auto;
 }
 
-.container{
-position: relative;
-width:800px;
-weight:900px;
-margin: 0 auto;
-padding: 60px;
+body {
+  font-family: 'Dayrom', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+  text-align: justify;
+  position: relative;
+  background: #4487E8;
+  width: 100%;
+  margin: 40px;
+  overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    margin: 0 auto;
+    color: #575e72;
+    cursor: crosshair;
+    padding: 30px;
+    text-align: center;
 }
 
 button{
-vertical-align: ;
-position: absolute;   
-right:30px;
-bottom:30px;
-padding-bottom: 5px; 5px; 5px;
-color:brown;
-background-color:grey;
-weight:800px;
-width:800px;
+    width: 250px;
+    height: 60px;
+    padding: 0;
+    margin: 10px 10px;
+    background: #4AC4FF;
+    border: 10;
+    cursor: crosshair;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
 }
