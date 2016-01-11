@@ -1,6 +1,6 @@
 $bouton = document.getElementById("bouton");
 $multiplicateur = document.getElementById("multiplicateur");
-$boutonAutoclic = document.getElementById("boutonAutoclic");
+$buttonAutoclic = document.getElementById("buttonAutoclic");
 $score = document.getElementById("score");
 score = 0;
 nbMultiplicateur = 1;
@@ -51,13 +51,13 @@ function acheterAutoclick() {
 };
 
 function autoclicker(){
-     $stop = setInterval($bouton.onclick,1000);
+     $stop = setInterval($button.onclick,1000);
  
 }
 
 $bouton.onclick = clic;
 $multiplicateur.onclick = acheterMultiplicateur;
-$boutonAutoclic.onclick = acheterAutoclick;
+$buttonAutoclic.onclick = acheterAutoclick;
 afficherScore();
 afficherMultiplicateur();
 afficherPrixAutoclick();
