@@ -1,64 +1,62 @@
-$bouton = document.getElementById("bouton");
-$multiplicateur = document.getElementById("multiplicateur");
-$buttonAutoclic = document.getElementById("buttonAutoclic");
-$score = document.getElementById("score");
-score = 0;
-nbMultiplicateur = 1;
+ var bouton = document.getElementById("bouton");
+ var multiplicateur = document.querySelector("#multiplicateur");
+ var boutonAutoclic = document.getElementById("boutonAutoclic");
+ var score = document.getElementById("score");
 
-function afficherScore() {
-    $score.innerHTML = "Score : " + score;
-}
+ var nbMultiplicateur = 1;
+ var prix = 80;
+ 
+ var elementScore = 0;
+ 
+ 
+ function afficherScore() {
+     score.innerHTML = "score : " + elementScore;
+ }
+ 
+ function afficherMultiplicateur() {
+    multiplicateur.innerHTML = "Multiplicateur x" + nbMultiplicateur + " (prix du prochain : " + prix + ")";
+  
+ }
+ 
+ function afficherPrixAutoclick(){
+     boutonAutoclic.innerHTML = "Acheter un autoclick pour 1000 cookies";
+ }
+ 
+ function clic() {
+     elementScore += nbMultiplicateur;
+     afficherScore();
+ }
+ 
 
-function afficherNbMultiplicateur() {
-    $multiplicateur.innerHTML = "Multiplicateur x" + nbMultiplicateur + " (prix du prochain : " + prix() + ")";
-}
-
-function afficherPrixAutoclick(){
-    $boutonAutoclic.innerHTML = "Acheter un autoclick pour " + prixAutoClick() + " cookies";
-}
-
-function clic() {
-    score = score + nbMultiplicateur;
-    afficherScore();
-}
-
-function prix() {
-    return 20 * nbMultiplicateur * nbMultiplicateur;
-}
-
-function prixAutoClick(){
-    return 100;
-}
-
-function acheterMultiplicateur() {
-    if (score >= prix()) {
-        score = score - prix();
-        nbMultiplicateur = nbMultiplicateur + 1;
-        afficherNbMultiplicateur();
+ function acheterMultiplicateur() {
+     if (elementScore >= prix ){
+        elementScore -= prix;
+        nbMultiplicateur += 1;
+    } else {
+        alert("Votre score est insuffisant !");
+    }
+    prix = 80*nbMultiplicateur;
+    afficherMultiplicateur();
+ }
+ 
+ function autoClicker() {
+     if (elementScore >= 1000 ){
+        elementScore -= prix;
+        setInterval (clic, 1000);  
         afficherScore();
     } else {
         alert("Votre score est insuffisant !");
     }
-}
-
-function acheterAutoclick() {
-    if (score >= prixAutoClick()) {
-        score = score - prixAutoClick();
-        autoclicker();
-    } else {
-        alert("Votre nombre de cookies est insuffisant !");
-    }
-};
-
-function autoclicker(){
-     $stop = setInterval($button.onclick,1000);
+ }
  
-}
+ 
 
-$bouton.onclick = clic;
-$multiplicateur.onclick = acheterMultiplicateur;
-$buttonAutoclic.onclick = acheterAutoclick;
-afficherScore();
-afficherMultiplicateur();
-afficherPrixAutoclick();
 
+ 
+ 
+ bouton.onclick = clic;
+ multiplicateur.onclick = acheterMultiplicateur;
+ boutonAutoclic.onclick = autoClicker ;
+ afficherScore();
+ afficherMultiplicateur();
+ afficherPrixAutoclick();
